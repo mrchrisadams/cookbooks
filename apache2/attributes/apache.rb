@@ -46,7 +46,7 @@ end
 
 # General settings
 set_unless[:apache][:listen_ports] = [ "80","443" ]
-set_unless[:apache][:contact] = "ops@example.com"
+set_unless[:apache][:contact] = "admin@chrisadams.me.uk"
 set_unless[:apache][:timeout] = 300
 set_unless[:apache][:keepalive] = "On"
 set_unless[:apache][:keepaliverequests] = 100
