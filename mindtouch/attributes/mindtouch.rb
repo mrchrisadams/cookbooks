@@ -1,0 +1,1 @@
+set_unless[:mindtouch][:servername] = node[:fqdn]
