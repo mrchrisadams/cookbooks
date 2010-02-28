@@ -1,7 +1,7 @@
 <VirtualHost *>
 
-        ServerName <%= node[:mindtouch][:servername] %>
-        ServerAlias <%= node[:ipaddress] %>
+        ServerName <%= @node[:mindtouch][:servername] %>
+        ServerAlias <%= @node[:ipaddress] %>
 
         ErrorLog /var/log/httpd/error-dekiwiki.log
         CustomLog /var/log/httpd/access-dekiwiki.log common
@@ -24,12 +24,12 @@
         RewriteCond %{HTTPS} =on
         RewriteCond %{REQUEST_URI} ^/@api/
         RewriteCond %{QUERY_STRING} !^(.*)dream.in.scheme= [NC]
-        RewriteRule ^/@api/(.*)$ http://<%= node[:mindtouch][:servername] %>:8081/$1?dream.in.scheme=https [QSA,P,L]
+        RewriteRule ^/@api/(.*)$ http://<%= @node[:mindtouch][:servername] %>:8081/$1?dream.in.scheme=https [QSA,P,L]
 
         RewriteCond %{HTTPS} =on
         RewriteCond %{REQUEST_URI} ^/@api/
         RewriteCond %{QUERY_STRING} ^(.*)dream.in.scheme= [NC]
-        RewriteRule ^/@api/(.*)$ http://<%= node[:mindtouch][:servername] %>:8081/$1 [QSA,P,L]
+        RewriteRule ^/@api/(.*)$ http://<%= @node[:mindtouch][:servername] %>:8081/$1 [QSA,P,L]
         # End Bug: 5252
 
         # deki-api uses encoded slashes in query parameters so AllowEncodedSlashes must be On
@@ -45,8 +45,8 @@
         # php_value upload_max_filesize "64M"
 
         # mod_proxy rules
-        ProxyPass /@api http://<%= node[:mindtouch][:servername] %>:8081 retry=1
-        ProxyPassReverse /@api http://<%= node[:mindtouch][:servername] %>:8081
+        ProxyPass /@api http://<%= @node[:mindtouch][:servername] %>:8081 retry=1
+        ProxyPassReverse /@api http://<%= @node[:mindtouch][:servername] %>:8081
         SetEnv force-proxy-request-1.0 1
         SetEnv proxy-nokeepalive 1
         <Proxy *>

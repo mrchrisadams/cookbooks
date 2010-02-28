@@ -5,25 +5,25 @@ PROGRAM="prince"
 VERSION="6.0"
 WEBSITE="http://www.princexml.com"
 
-prefix=/usr/local
+prefix=/usr
 
 base=`dirname $0`
 
 cd "$base"
 
-echo "$PRODUCT $VERSION"
-echo
-echo "Install directory"
-echo "    This is the directory in which $PRODUCT $VERSION will be installed."
-echo "    Press Enter to accept the default directory or enter an alternative."
-echo -n "    [$prefix]: "
+# echo "$PRODUCT $VERSION"
+# echo
+# echo "Install directory"
+# echo "    This is the directory in which $PRODUCT $VERSION will be installed."
+# echo "    Press Enter to accept the default directory or enter an alternative."
+# echo -n "    [$prefix]: "
 
 # read input
 # if [ ! -z "$input" ] ; then
 #     prefix="$input"
 # fi
 
-echo
+# echo
 echo "Installing $PRODUCT $VERSION..."
 
 # Create shell script
