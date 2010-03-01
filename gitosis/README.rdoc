@@ -1,0 +1,11 @@
+= DESCRIPTION:
+
+This is a gitosis installation recipe for setting up gitosis on a Centos box. This installs a user called git, and create
+
+
+= REQUIREMENTS:
+
+= ATTRIBUTES: 
+
+= USAGE:
+
