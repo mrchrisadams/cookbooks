@@ -23,12 +23,12 @@ package "python-setuptools"
 
 execute "clone gitosis" do
   command "git clone git://eagain.net/gitosis.git /tmp/gitosis"
-  not_if { File.exists?("/home/git") }
+  not_if { File.exists?("/srv/git") }
 end
 
 execute "install gitosis" do
   command "cd /tmp/gitosis && python setup.py install"
-  not_if { File.exists?("/home/git") }
+  not_if { File.exists?("/srv/git") }
 end
 
 user "git" do
